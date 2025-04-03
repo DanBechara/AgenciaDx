@@ -1,0 +1,429 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Variáveis CSS para temas */
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #333333;
+    --navbar-color: #ffffff;
+    --navbar-text-color: #333333;
+    --card-background: #ffffff;
+    --card-text-color: #333333;
+    --footer-background: #2c3e50;
+    --footer-text-color: #ffffff;
+    --primary-color: #d40416; /* Amarelo para destaque */
+    --primary-hover-color: #d40416;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --navbar-color: #2a2a2a;
+    --navbar-text-color: #f4f4f4;
+    --card-background: #2a2a2a;
+    --card-text-color: #f4f4f4;
+    --footer-background: #1a1a1a;
+    --footer-text-color: #f4f4f4;
+    --primary-color: #d40416; /* Amarelo para destaque */
+    --primary-hover-color: #d40416;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--navbar-color);
+    color: var(--navbar-text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+#navbar .logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+#navbar .nav-links li {
+    margin-left: 20px;
+}
+
+#navbar .nav-links a {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+#navbar .nav-links a:hover::after,
+#navbar .nav-links a:focus::after {
+    width: 100%;
+}
+
+#navbar .nav-links a:hover,
+#navbar .nav-links a:focus {
+    color: var(--primary-color);
+}
+
+/* Interruptor de Tema */
+.theme-switch {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle {
+    display: none;
+}
+
+.toggle-label {
+    width: 50px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-label::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:checked + .toggle-label {
+    background-color: var(--primary-color);
+}
+
+#theme-toggle:checked + .toggle-label::before {
+    transform: translateX(24px);
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Texto branco para contraste */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Transição rápida */
+}
+
+.video-background video.active {
+    opacity: 1;
+}
+
+/* Camada de sobreposição */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Preto com 50% de transparência */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima da sobreposição */
+    max-width: 800px;
+    padding: 20px;
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#hero .cta-button {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hero .cta-button:hover {
+    background: var(--primary-hover-color);
+}
+
+/* Serviços */
+#services {
+    padding: 60px 20px;
+    background: var(--background-color);
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+#services .service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#services .card {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    width: 22%;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#services .card:hover,
+#services .card:focus {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#services .card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#services .card p {
+    font-size: 16px;
+    color: var(--card-text-color);
+}
+
+/* Seção da Equipe */
+#team {
+    padding: 60px 20px;
+    background: var(--background-color);
+    text-align: center;
+}
+
+#team h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.team-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.team-members {
+    display: flex;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Adicionado opacity */
+}
+
+.team-member {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease; /* Transição de opacidade */
+}
+
+.team-member.active {
+    opacity: 1; /* Visível quando ativo */
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: var(--card-text-color);
+}
+
+/* Botões do Carrossel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: var(--primary-hover-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Indicadores de Posição */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .indicator.active {
+    background-color: var(--primary-color);
+}
+
+/* Rodapé */
+#footer {
+    background: var(--footer-background);
+    color: var(--footer-text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+#footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#footer .footer-social a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+#footer .footer-social a:hover,
+#footer .footer-social a:focus {
+    color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #services .card {
+        width: 45%;
+    }
+
+    .team-member {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #services .card {
+        width: 100%;
+    }
+
+    #navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Acessibilidade */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

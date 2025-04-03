@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agência XYZ - Especializada em marketing digital, criação de landing pages, automações e Google Meu Negócio.">
+    <meta name="keywords" content="marketing digital, landing pages, automações, Google Meu Negócio, planilhas automatizadas">
+    <meta name="author" content="Agência XYZ">
+    <title>Agência DX - Marketing Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar Fixa -->
+    <header id="navbar">
+        <div class="logo">
+            <h1>Agência DX</h1>
+        </div>
+        <nav aria-label="Navegação principal">
+            <ul class="nav-links">
+                <li><a href="#hero" aria-current="page">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#team">Equipe</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-toggle" aria-label="Alternar tema">
+            <label for="theme-toggle" class="toggle-label"></label>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="hero">
+            <div class="video-background">
+                <video class="active" autoplay muted loop>
+                    <source src="./coverr-focused-working-space-1555-1080p.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop>
+                    <source src="./coverr-close-up-of-man-using-iphone-15-1080p.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop>
+                    <source src="./coverr-coding-sequences-9906-1080p.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop>
+                    <source src="./coverr-woman-opening-a-marketing-book-and-turning-its-pages-622-1080p.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div> <!-- Camada de sobreposição -->
+            </div>
+            <div class="hero-content">
+                <h1 id="hero-heading">Transforme seu negócio com nossos serviços de marketing digital!</h1>
+                <p>Criação de Sites, Google Meu Negócio, Automações e Planilhas Automatizadas de Orçamentos.</p>
+                <a href="#contact" class="cta-button">Fale Conosco</a>
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section id="services" aria-labelledby="services-heading">
+            <h2 id="services-heading">Nossos Serviços</h2>
+            <div class="service-cards">
+                <article class="card">
+                    <h3>Criação de Landing Pages</h3>
+                    <p>Landing pages profissionais para aumentar suas conversões.</p>
+                </article>
+                <article class="card">
+                    <h3>Google Meu Negócio</h3>
+                    <p>Otimização e gerenciamento do seu perfil no Google.</p>
+                </article>
+                <article class="card">
+                    <h3>Automações</h3>
+                    <p>Automatize tarefas repetitivas e ganhe tempo.</p>
+                </article>
+                <article class="card">
+                    <h3>Planilhas Automatizadas</h3>
+                    <p>Planilhas personalizadas para gestão de orçamentos.</p>
+                </article>
+            </div>
+        </section>
+
+       <!-- Seção da Equipe -->
+<section id="team" aria-labelledby="team-heading">
+    <h2 id="team-heading">Nossa Equipe</h2>
+    <div class="team-carousel">
+        <button class="carousel-button prev" aria-label="Anterior">&#10094;</button>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="./mbi404ngaq7dscpza0c6acr8cnoj.jpeg" alt="Foto de Daniel Bechara">
+                <h3>Daniel Bechara</h3>
+                <p>Diretor Executivo / Desenvolvedor Full Stack & Fundador</p>
+                <p>Daniel é especialista em desenvolvimento de sites.</p>
+            </div>
+            <div class="team-member">
+                <img src="./file.png" alt="Foto de Rafael Pereira">
+                <h3>Rafael Pereira</h3>
+                <p> Diretor de Operações & Fundador</p>
+                <p>Rafael é essencial para transformar o planejamento estratégico em resultados práticos!</p>
+            </div>
+            <div class="team-member">
+                <img src="./alisson.jpg" alt="Foto de Alisso Souza">
+                <h3>Alisson Souza</h3>
+                <p>Designer UX/UI</p>
+                <p>Alisson contribui para o sucesso do produto e da empresa e seus incríveis designs para o cliente.</p>
+            </div>
+        </div>
+        <button class="carousel-button next" aria-label="Próximo">&#10095;</button>
+    </div>
+    <!-- Indicadores de posição -->
+    <div class="carousel-indicators">
+        <span class="indicator active" data-index="0"></span>
+        <span class="indicator" data-index="1"></span>
+        <span class="indicator" data-index="2"></span>
+    </div>
+</section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="footer" aria-labelledby="footer-heading">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h2 id="footer-heading" class="visually-hidden">Informações de contato</h2>
+                <p>&copy; 2025 Agência DX. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-social" id = "contact">
+                <a href="https://wa.me/5533999329600" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="https://www.instagram.com/agenciadxoficial?igsh=ZWowZWttczdjYWoz" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://x.com/agencia_dx" target="_blank">X</a>
+                <a href="mailto:contatodxagencia@gmail.com">Email</a>
+
+               
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
